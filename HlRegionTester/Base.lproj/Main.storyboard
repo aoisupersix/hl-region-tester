@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HlRegionTester" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在の状態：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6r-bw-lkH">
+                                <rect key="frame" x="108" y="32" width="104" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="RSSI:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3l-rE-Lbz">
+                                <rect key="frame" x="115" y="104" width="40.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="StatusLabel" text="初期状態" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdv-Oq-7Mp">
+                                <rect key="frame" x="107.5" y="61" width="105.5" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="MinutesLabel" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rV-zO-bMa">
+                                <rect key="frame" x="77" y="156" width="32.5" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="SecondsLabel" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Eb-PI-mi9">
+                                <rect key="frame" x="143.5" y="156" width="33" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="StartTimerButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dj2-R4-jFt">
+                                <rect key="frame" x="51" y="211" width="62" height="30"/>
+                                <state key="normal" title="計測開始"/>
+                                <connections>
+                                    <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchDown" id="IFn-As-QWs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="ChangeStatusToInButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRM-bd-LQj">
+                                <rect key="frame" x="31" y="287" width="108" height="30"/>
+                                <state key="normal" title="侵入に切り替え"/>
+                                <connections>
+                                    <action selector="changeStatusToIn:" destination="BYZ-38-t0r" eventType="touchDown" id="3Nz-Fs-AAQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="ChangeStatusToOutButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zt-65-tro">
+                                <rect key="frame" x="181" y="287" width="108" height="30"/>
+                                <state key="normal" title="退出に切り替え"/>
+                                <connections>
+                                    <action selector="changeStatusToOut:" destination="BYZ-38-t0r" eventType="touchDown" id="37m-4I-qAf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="MillSecondsLabel" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ofq-db-kdj">
+                                <rect key="frame" x="212.5" y="156" width="32.5" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="StopTimerButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f03-h4-e0e">
+                                <rect key="frame" x="208" y="211" width="62" height="30"/>
+                                <state key="normal" title="計測停止"/>
+                                <connections>
+                                    <action selector="stopTimer:" destination="BYZ-38-t0r" eventType="touchDown" id="xie-HM-rBo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="RssiLabel" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xw-05-d94">
+                                <rect key="frame" x="162" y="104" width="133" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="133" id="zFf-6O-yqc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="m3l-rE-Lbz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="115" id="3y1-v6-TnH"/>
+                            <constraint firstItem="dj2-R4-jFt" firstAttribute="top" secondItem="6rV-zO-bMa" secondAttribute="bottom" constant="23" id="5yC-t8-4Xr"/>
+                            <constraint firstItem="8Eb-PI-mi9" firstAttribute="baseline" secondItem="Ofq-db-kdj" secondAttribute="baseline" id="8EZ-D9-qrw"/>
+                            <constraint firstItem="B6r-bw-lkH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="ANM-aP-LeB"/>
+                            <constraint firstItem="Ofq-db-kdj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8Eb-PI-mi9" secondAttribute="trailing" constant="8" symbolic="YES" id="C4n-O3-izk"/>
+                            <constraint firstItem="fdv-Oq-7Mp" firstAttribute="top" secondItem="B6r-bw-lkH" secondAttribute="bottom" constant="8" id="FBx-ME-YhF"/>
+                            <constraint firstItem="7xw-05-d94" firstAttribute="leading" secondItem="m3l-rE-Lbz" secondAttribute="trailing" constant="6.5" id="FOJ-p4-HAQ"/>
+                            <constraint firstItem="Ofq-db-kdj" firstAttribute="top" secondItem="fdv-Oq-7Mp" secondAttribute="bottom" constant="63" id="FOL-0W-O4G"/>
+                            <constraint firstItem="7xw-05-d94" firstAttribute="leading" secondItem="m3l-rE-Lbz" secondAttribute="trailing" constant="6.5" id="PjN-mj-WoF"/>
+                            <constraint firstItem="8Eb-PI-mi9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TrS-nX-NAN"/>
+                            <constraint firstItem="dj2-R4-jFt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="51" id="UFG-U3-Tdf"/>
+                            <constraint firstItem="jRM-bd-LQj" firstAttribute="top" secondItem="dj2-R4-jFt" secondAttribute="bottom" constant="46" id="Y09-A2-uCc"/>
+                            <constraint firstItem="7xw-05-d94" firstAttribute="top" secondItem="fdv-Oq-7Mp" secondAttribute="bottom" constant="11" id="Zff-pE-JUk"/>
+                            <constraint firstItem="jRM-bd-LQj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="aeU-3m-OHt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6zt-65-tro" secondAttribute="trailing" constant="31" id="bfw-md-lR2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ofq-db-kdj" secondAttribute="trailing" constant="75" id="bj6-vU-pbR"/>
+                            <constraint firstItem="m3l-rE-Lbz" firstAttribute="top" secondItem="fdv-Oq-7Mp" secondAttribute="bottom" constant="11" id="de5-Xn-s1B"/>
+                            <constraint firstItem="B6r-bw-lkH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hOV-TX-dSO"/>
+                            <constraint firstItem="f03-h4-e0e" firstAttribute="top" secondItem="8Eb-PI-mi9" secondAttribute="bottom" constant="23" id="i97-r7-zc4"/>
+                            <constraint firstItem="6zt-65-tro" firstAttribute="top" secondItem="f03-h4-e0e" secondAttribute="bottom" constant="46" id="jVZ-Zu-t3d"/>
+                            <constraint firstItem="fdv-Oq-7Mp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="phd-cv-DeB"/>
+                            <constraint firstItem="8Eb-PI-mi9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6rV-zO-bMa" secondAttribute="trailing" constant="8" symbolic="YES" id="ptu-yQ-eEo"/>
+                            <constraint firstItem="6zt-65-tro" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jRM-bd-LQj" secondAttribute="trailing" constant="8" symbolic="YES" id="q5B-5o-EbH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7xw-05-d94" secondAttribute="trailing" constant="25" id="qOy-j6-EpQ"/>
+                            <constraint firstItem="6rV-zO-bMa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="rMz-7g-Pgb"/>
+                            <constraint firstItem="f03-h4-e0e" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dj2-R4-jFt" secondAttribute="trailing" constant="8" symbolic="YES" id="seb-T4-CCU"/>
+                            <constraint firstItem="Ofq-db-kdj" firstAttribute="leading" secondItem="8Eb-PI-mi9" secondAttribute="trailing" constant="36" id="uMi-3Z-a7s"/>
+                            <constraint firstItem="8Eb-PI-mi9" firstAttribute="baseline" secondItem="6rV-zO-bMa" secondAttribute="baseline" id="v1C-it-beH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f03-h4-e0e" secondAttribute="trailing" constant="50" id="yBA-Xf-xut"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="millSecondLabel" destination="Ofq-db-kdj" id="gBw-AA-K9k"/>
+                        <outlet property="minuteLabel" destination="6rV-zO-bMa" id="p2f-eO-jva"/>
+                        <outlet property="rssiLabel" destination="7xw-05-d94" id="yCd-tL-3SP"/>
+                        <outlet property="secondLabel" destination="8Eb-PI-mi9" id="Ju9-LD-edI"/>
+                        <outlet property="statusLabel" destination="fdv-Oq-7Mp" id="5Fi-re-UjR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="133.09859154929578"/>
+        </scene>
+    </scenes>
+</document>
